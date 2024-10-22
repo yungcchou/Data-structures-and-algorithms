@@ -93,7 +93,10 @@ $$C[i][j] = \sum_{k=1}^{n} A[i][k] \times B[k][j]$$
 
 對於矩陣 $A$ 和 $B$：
 
-$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$
+$$A = \begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$
 
 矩陣 $A \cdot B$ 的結果為：
 
