@@ -22,8 +22,6 @@
 
 Let's take a 5x5 matrix as an example, where most of the elements are zeros:
 
-#### Standard Matrix Representation
-
 $$\begin{bmatrix}
 0 & 0 & 3 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 \\
