@@ -96,11 +96,23 @@ $$C[i][j] = \sum_{k=1}^{n} A[i][k] \times B[k][j]$$
 $$A = \begin{bmatrix}
 1 & 2 \\
 3 & 4
-\end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$
+\end{bmatrix}, \quad B =
+\begin{bmatrix}
+5 & 6 \\
+7 & 8
+\end{bmatrix}$$
 
 矩陣 $A \cdot B$ 的結果為：
 
-$$C = \begin{bmatrix} (1 \times 5 + 2 \times 7) & (1 \times 6 + 2 \times 8) \\ (3 \times 5 + 4 \times 7) & (3 \times 6 + 4 \times 8) \end{bmatrix} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$
+$$C = 
+\begin{bmatrix}
+(1 \times 5 + 2 \times 7) & (1 \times 6 + 2 \times 8) \\
+(3 \times 5 + 4 \times 7) & (3 \times 6 + 4 \times 8)
+\end{bmatrix} =
+\begin{bmatrix}
+19 & 22 \\
+43 & 50
+\end{bmatrix}$$
 
 #### **主要特徵**
 
