@@ -101,4 +101,4 @@ $$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos(\theta)$$
 
 Each of these operations is essential in various domains like computer graphics, machine learning, physics simulations, and algorithms.
 
-[[ Python Demo ]](02_matrix.jpynb)
+[[ Python Demo ]](02_matrix.ipynb)
