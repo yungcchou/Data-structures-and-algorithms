@@ -85,7 +85,7 @@ $$\mathbf{a} \cdot \mathbf{b} = (1 \times 4) + (2 \times 5) + (3 \times 6) = 32$
 
 #### **矩陣點積公式**
 
-若 $A$ 是大小為 $m \times n$ 的矩陣，$B$ 是大小為 $n \times p$ 的矩陣，它們的點積結果是大小為 $m \times p$ 的矩陣 $C$，其中每個元素 $C[i][j]$ 的計算方式為：
+若 $A$ 是大小為 $m \times n$ 的矩陣， $B$ 是大小為 $n \times p$ 的矩陣，它們的點積結果是大小為 $m \times p$ 的矩陣 $C$，其中每個元素 $C[i][j]$ 的計算方式為：
 
 $$C[i][j] = \sum_{k=1}^{n} A[i][k] \times B[k][j]$$
 
