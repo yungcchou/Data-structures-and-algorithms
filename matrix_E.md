@@ -92,10 +92,6 @@ $$C = \begin{bmatrix} (1 \times 5 + 2 \times 7) & (1 \times 6 + 2 \times 8) \\ (
 | **Use Case**                      | Geometric interpretations, vector similarity, projections | Linear transformations, neural networks, graphics         |
 | **Geometric Interpretation**      | Measures projection of one vector onto another         | No direct geometric interpretation                        |
 
-#### Summary:
-- The **dot product for two vectors** results in a **scalar** and is used to measure vector similarity or projection.
-- The **dot product for two matrices** (matrix multiplication) results in a **new matrix** and is used in more complex operations such as linear transformations and systems of equations.
-
 ---
 
 ### **Transpose**
