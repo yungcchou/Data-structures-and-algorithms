@@ -4,4 +4,4 @@
 
 ### Array
 
-### [matrix_C.md](矩陣), [Matrix_E.md](Matrix)
+### [矩陣](matrix_C.md),   [Matrix](matrix_E.md)
