@@ -2,6 +2,6 @@
 
 ## Linear Data Structure
 
-### Array
+### [陣列](array_C.md),   [Array](array_E.md)
 
 ### [矩陣](matrix_C.md),   [Matrix](matrix_E.md)
