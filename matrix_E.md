@@ -18,6 +18,71 @@
 
 - A matrix with a large number of zero elements is called a sparse matrix. Special data structures like linked lists or dictionaries are used to store sparse matrices efficiently to save memory.
 
+### Example
+
+Let's take a 5x5 matrix as an example, where most of the elements are zeros:
+
+#### Standard Matrix Representation
+
+$$\begin{bmatrix}
+0 & 0 & 3 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+4 & 0 & 0 & 0 & 5 \\
+0 & 7 & 0 & 0 & 0 \\
+0 & 0 & 0 & 9 & 0 \\
+\end{bmatrix}$$
+
+#### Sparse Matrix Representation:
+In a sparse matrix, only non-zero elements and their positions are stored to save memory.
+
+There are different formats to store sparse matrices. One of the simplest is the **COO (Coordinate) format**, which stores the row index, column index, and value for each non-zero element.
+
+#### Sparse Matrix in COO Format:
+| Row | Column | Value |
+|:-----:|:--------:|:-----:|
+|  0  | 2      | 3     |
+| 2   | 0      | 4     |
+| 2   | 4      | 5     |
+| 3   | 1      | 7     |
+| 4   | 3      | 9     |
+
+#### Explanation:
+- Instead of storing all elements, we only store the non-zero elements with their respective row and column indices.
+- This method is particularly memory-efficient when dealing with large matrices that have many zeros.
+
+### Python Code Example (Sparse Matrix using `scipy`):
+
+```python
+import numpy as np
+from scipy.sparse import coo_matrix
+
+# Create a dense matrix (5x5 matrix)
+dense_matrix = np.array([
+    [0, 0, 3, 0, 0],
+    [0, 0, 0, 0, 0],
+    [4, 0, 0, 0, 5],
+    [0, 7, 0, 0, 0],
+    [0, 0, 0, 9, 0]
+])
+
+# Convert the dense matrix into a sparse matrix (COO format)
+sparse_matrix = coo_matrix(dense_matrix)
+
+# Print the sparse matrix data (row, column, and value)
+print("Row Indices:", sparse_matrix.row)
+print("Column Indices:", sparse_matrix.col)
+print("Values:", sparse_matrix.data)
+```
+
+### Output:
+```text
+Row Indices: [0 2 2 3 4]
+Column Indices: [2 0 4 1 3]
+Values: [3 4 5 7 9]
+```
+
+This output shows the non-zero elements of the matrix, their row and column indices, and their values, just like the table in the sparse matrix representation.
+
 ## **Applications in Algorithms**
 
 - **Graph Representation**: Matrices can be used to represent graphs through adjacency matrices, where the presence of an edge between two vertices is marked in the matrix.
