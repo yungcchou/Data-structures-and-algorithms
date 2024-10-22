@@ -28,4 +28,77 @@
 
 - Operations on large matrices can be computationally expensive. Optimizations such as blocking, Strassen's algorithm for multiplication, and using sparse matrix representations are important for improving performance.
 
-Matrices are fundamental in many algorithms and data structures, particularly in applications related to graphs, optimization problems, and dynamic programming.
+## Matrix multiplication and dot product
+
+Matrix multiplication and dot product are important operations in linear algebra and have distinct characteristics and uses. Let's look at each of them in detail:
+
+### 1. **Matrix Multiplication**
+
+Matrix multiplication is a way of combining two matrices to produce a third matrix. There are different types of matrix multiplication, but the most common form is **standard matrix multiplication**.
+
+#### **Standard Matrix Multiplication (Dot Product for Matrices)**
+
+- **Operation**: If you have two matrices, $A$and $B$, where $A$is of size $m \times n$ and $B$is of size $n \times p$, the result will be a matrix $C$of size $m \times p$.
+- **Formula**: The element $C[i][j]$ in the resulting matrix is computed as the dot product of the $i$-th row of matrix $A$and the $j$-th column of matrix $B$.
+  
+$$C[i][j] = \sum_{k=1}^{n} A[i][k] \times B[k][j]$$
+
+- **Conditions**: For standard matrix multiplication, the number of columns in the first matrix $A$must equal the number of rows in the second matrix $B$.
+
+- **Complexity**: The time complexity of multiplying two $n \times n$matrices is $O(n^3)$, though this can be improved using more advanced algorithms (like Strassen’s Algorithm) to approximately $O(n^{2.81})$.
+
+#### **Strassen’s Matrix Multiplication**
+
+- **Strassen's algorithm** improves on the classical $O(n^3)$matrix multiplication by reducing the number of recursive multiplications needed.
+- Instead of dividing matrices directly into submatrices and multiplying them, Strassen's method uses a more complex combination of the submatrices to reduce the number of multiplications.
+- **Time complexity**: $O(n^{2.81})$, which is faster than the traditional method but still not optimal for all cases.
+
+#### **Element-wise Multiplication (Hadamard Product)**
+
+- **Operation**: In contrast to standard matrix multiplication, element-wise multiplication multiplies corresponding elements of two matrices.
+
+$$C[i][j] = A[i][j] \times B[i][j]$$
+
+- **Conditions**: Both matrices must have the same dimensions.
+- **Complexity**: $O(n^2)$for two $n \times n$ matrices.
+
+### 2. **Dot Product** (Specific to Vectors)
+
+The dot product (also called scalar product) is a specialized form of matrix multiplication that applies to vectors. It results in a scalar value rather than a matrix or another vector.
+
+#### **Dot Product Definition**
+
+- **Operation**: Given two vectors $\mathbf{a}$and $\mathbf{b}$ of the same length, the dot product is computed as:
+  
+$$\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i \times b_i$$
+
+  Where $a_i$and $b_i$ are the individual components of the vectors $\mathbf{a}$ and $\mathbf{b}$.
+  
+- **Result**: The result of a dot product is a scalar value.
+- **Example**: If $\mathbf{a} = [1, 2, 3]$and $\mathbf{b} = [4, 5, 6]$, then the dot product is:
+  
+$$\mathbf{a} \cdot \mathbf{b} = (1 \times 4) + (2 \times 5) + (3 \times 6) = 32$$
+
+- **Geometric Interpretation**: The dot product measures how much one vector extends in the direction of another. It is related to the cosine of the angle between two vectors, such that:
+  
+$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos(\theta)$$
+  where $\theta$ is the angle between $\mathbf{a}$ and $\mathbf{b}$.
+
+### Key Differences Between Matrix Multiplication and Dot Product
+
+| Feature                    | Matrix Multiplication                                | Dot Product (for Vectors)                 |
+|----------------------------|------------------------------------------------------|-------------------------------------------|
+| **Type of Output**          | Matrix                                               | Scalar (Single number)                    |
+| **Dimensions**              | For matrices $A(m \times n)$ and $B(n \times p)$, results in $C(m \times p)$matrix | Applies to vectors of the same length     |
+| **Conditions**              | Number of columns in the first matrix = Number of rows in the second matrix | Both vectors must have the same length    |
+| **Complexity**              | $O(n^3)$ for $n \times n$ matrices (can be reduced with optimizations) | $O(n)$for vectors of length $n$ |
+| **Use Case**                | Commonly used for transformations, solving systems of equations, graphics, etc. | Used to calculate projection, similarity  |
+
+### Summary
+
+- **Matrix Multiplication** refers to multiplying two matrices to produce another matrix, with applications in graphics, engineering, and algorithm design.
+- **Dot Product** is a specific case of vector multiplication resulting in a scalar and is widely used in physics, machine learning, and statistics for measuring vector similarity.
+
+Each of these operations is essential in various domains like computer graphics, machine learning, physics simulations, and algorithms.
+
+[[ Python Demo ]](02_matrix.jpynb)
