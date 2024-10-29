@@ -10,9 +10,95 @@
 
 ## **Basic Matrix Operations**
 
-- **Addition and Subtraction**: Matrices can be added or subtracted element-wise, provided the matrices have the same dimensions.
-- **Multiplication**: Two matrices can be multiplied if the number of columns in the first matrix matches the number of rows in the second matrix.
-- **Transpose**: Transposing a matrix involves swapping its rows and columns.
+---
+
+### **Addition and Subtraction**
+
+Matrices can be added or subtracted element-wise, provided the matrices have the same dimensions.
+
+---
+
+### **Multiplication**
+
+Two matrices can be multiplied if the number of columns in the first matrix matches the number of rows in the second matrix.
+
+#### Matrices multiplication
+
+#### Dot production
+
+The dot product for **two matrices** and **two vectors** may seem similar but they are **fundamentally different** in terms of their definitions, results, and applications. Here's a comparison:
+
+### 1. **Dot Product for Two Vectors**
+
+The dot product of two vectors results in a **scalar value**. It measures how much one vector extends in the direction of another and is often used in **geometric interpretations** like finding the **angle** between **two vectors**.
+
+#### **Formula for Dot Product of Two Vectors**
+
+If $\mathbf{a}$ and $\mathbf{b}$ are two vectors of size $n$, the dot product is:
+
+$$\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i \times b_i$$
+
+#### **Example of Dot Product for Two Vectors**
+
+For $\mathbf{a} = [1, 2, 3]$) and $\mathbf{b} = [4, 5, 6]$, the dot product is:
+
+$$\mathbf{a} \cdot \mathbf{b} = (1 \times 4) + (2 \times 5) + (3 \times 6) = 32$$
+
+#### **Key Characteristics**
+
+- **Result**: A **scalar** (single number).
+- **Dimension**: Operates on two vectors of the same size.
+- **Application**: Commonly used in physics, machine learning (e.g., finding the similarity between vectors), and geometry.
+
+---
+
+### 2. **Dot Product for Two Matrices**
+
+The dot product of two matrices (commonly referred to as **matrix multiplication**) results in a **new matrix**. It combines rows of the first matrix with columns of the second matrix by taking the dot product of each row-column pair.
+
+#### **Formula for Matrix Dot Product**
+
+If $A$ is a matrix of size $m \times n$ and $B$ is a matrix of size $n \times p$, their dot product results in a matrix $C$ of size $m \times p$, where each element $C[i][j]$ is calculated as:
+
+$$C[i][j] = \sum_{k=1}^{n} A[i][k] \times B[k][j]$$
+
+#### **Example**
+
+For matrices $A$ and $B$:
+
+$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$
+
+The result of $A \cdot B$ is:
+
+$$C = \begin{bmatrix} (1 \times 5 + 2 \times 7) & (1 \times 6 + 2 \times 8) \\ (3 \times 5 + 4 \times 7) & (3 \times 6 + 4 \times 8) \end{bmatrix}
+= \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$
+
+#### **Key Characteristics**:
+- **Result**: A **matrix** (with new dimensions depending on the original matrices).
+- **Dimension**: Requires the number of columns in the first matrix to match the number of rows in the second matrix.
+- **Application**: Used in linear transformations, solving systems of equations, graphics, machine learning (neural networks), etc.
+
+---
+
+### **Differences Between Dot Product for Two Vectors and Two Matrices**:
+
+| Feature                          | Dot Product for Two Vectors                           | Dot Product for Two Matrices (Matrix Multiplication)     |
+|-----------------------------------|-------------------------------------------------------|----------------------------------------------------------|
+| **Result**                        | A scalar (single number)                              | A new matrix                                              |
+| **Dimension Requirement**         | Two vectors must have the same size                   | The number of columns in the first matrix must equal the number of rows in the second matrix |
+| **Formula**                       | $\mathbf{a} \cdot \mathbf{b} = \sum a_i \times b_i$ | $C[i][j] = \sum A[i][k] \times B[k][j]$               |
+| **Complexity**                    | $O(n)$ where $n$ is the size of the vectors   | $O(m \times n \times p)$ for matrices $A(m \times n)$ and $B(n \times p)$ |
+| **Resulting Dimension**           | A scalar                                              | A matrix of size $m \times p$                         |
+| **Use Case**                      | Geometric interpretations, vector similarity, projections | Linear transformations, neural networks, graphics         |
+| **Geometric Interpretation**      | Measures projection of one vector onto another         | No direct geometric interpretation                        |
+
+---
+
+### **Transpose**
+
+Transposing a matrix involves swapping its rows and columns.
+
+---
 
 ## **Sparse Matrix**
 
@@ -21,8 +107,6 @@
 ### Example
 
 Let's take a 5x5 matrix as an example, where most of the elements are zeros:
-
-#### Standard Matrix Representation
 
 $$\begin{bmatrix}
 0 & 0 & 3 & 0 & 0 \\
@@ -39,8 +123,8 @@ There are different formats to store sparse matrices. One of the simplest is the
 
 #### Sparse Matrix in COO Format:
 | Row | Column | Value |
-|-----|--------|-------|
-| 0   | 2      | 3     |
+|:-----:|:--------:|:-----:|
+|  0  | 2      | 3     |
 | 2   | 0      | 4     |
 | 2   | 4      | 5     |
 | 3   | 1      | 7     |
